@@ -13,6 +13,15 @@ services:
     - md_data:/var/lib/mysql
     - ./db:/docker-entrypoint-initdb.d
 
+  mariadb_exporter:
+    image: quay.io/prometheuscommunity/mysqld-exporter
+    ports:
+      - 9104:9104
+    environment:
+      DATA_SOURCE_NAME: root:abc123!@(db:3306)
+    depends_on:
+      - db
+
   web:
     image: yunsung22/fawebapp
     build: web
