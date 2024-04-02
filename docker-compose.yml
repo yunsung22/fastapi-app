@@ -20,7 +20,7 @@ services:
 #    environment:
 #      - DATA_SOURCE_NAME=root:abc123!@(db:3306)/
     command:
-      - "--mysqld.usernamte=root:abc123!"
+      - "--mysqld.username=root:abc123!"
       - "--mysqld.address=db:3306"
     depends_on:
       - db
