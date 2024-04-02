@@ -18,7 +18,7 @@ services:
     ports:
       - 9104:9104
     environment:
-      DATA_SOURCE_NAME: root:abc123!@(db:3306)
+      - DATA_SOURCE_NAME="root:abc123!@(db:3306)/
     depends_on:
       - db
 
